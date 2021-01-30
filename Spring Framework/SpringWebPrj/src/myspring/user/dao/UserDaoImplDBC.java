@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import myspring.user.vo.UserVO;
 
-@Repository("userDao")
+// @Repository("userDao")
 public class UserDaoImplDBC implements UserDao {
 	
 	private JdbcTemplate jdbcTemplate;	

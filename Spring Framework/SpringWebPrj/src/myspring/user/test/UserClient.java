@@ -18,6 +18,7 @@ import myspring.user.vo.UserVO;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:config/beans.xml")
 public class UserClient {
+	
 	@Autowired
 	ApplicationContext ac;
 	
@@ -27,10 +28,8 @@ public class UserClient {
 	@Test
 	@Ignore
 	public void updateUserTest() {
-		service.updateUser(new UserVO("gildong", "홍길동2", "남2", "서울2"));
+		service.updateUser(new UserVO("gildong", "홍길동", "남", "서울"));
 		
-		UserVO user = service.getUser("gildong");
-		System.out.println(user);
 	}
 
 	@Test
@@ -43,7 +42,6 @@ public class UserClient {
 	}
 
 	@Test
-	@Ignore
 	public void getUserTest() {
 		UserVO user = service.getUser("gildong");
 		System.out.println(user);
@@ -51,7 +49,6 @@ public class UserClient {
 	}
 
 	@Test
-	@Ignore
 	public void dataSourceTest() {
 		DataSource dataSource = (DataSource)ac.getBean("dataSource");
 		try {
