@@ -7,11 +7,17 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 	
-	<!-- Mapper 설정 -->
-	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="myspring.user.dao.UserMapper" />
-		<property name="sqlSessionTemplate" ref="sqlSession" />
+	<!-- MapperScannerCofigurer -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage"  value="myspring.user.dao" />
+		<property name="annotationClass"  value="myspring.user.dao.MyMapper" />
 	</bean>
+	
+	<!-- Mapper 설정 -->
+<!-- 	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean"> -->
+<!-- 		<property name="mapperInterface" value="myspring.user.dao.UserMapper" /> -->
+<!-- 		<property name="sqlSessionTemplate" ref="sqlSession" /> -->
+<!-- 	</bean> -->
 
 	<!-- mybatis-spring 설정 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
