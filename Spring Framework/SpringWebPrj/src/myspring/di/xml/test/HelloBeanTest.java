@@ -6,19 +6,19 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import myspring.di.xml.Hello;
 import myspring.di.xml.Printer;
 
-// ´Ü¼ø ½ÇÇà Å×½ºÆ®
+// ë‹¨ìˆœ ì‹¤í–‰ í…ŒìŠ¤íŠ¸
 public class HelloBeanTest {
 	
 	public static void main(String[] args) {
 		
-		// IoC ÄÁÅ×ÀÌ³Ê »ı¼º (configÀÇ bean.xml ÂüÁ¶)
+		// IoC ì»¨í…Œì´ë„ˆ ìƒì„± (configì˜ bean.xml ì°¸ì¡°)
 		ApplicationContext ac = new GenericXmlApplicationContext("config/beans.xml");
 		
-		// hello Bean °¡Á®¿À±â
+		// hello Bean ê°€ì ¸ì˜¤ê¸°
 		Hello hello = (Hello)ac.getBean("hello");
 		System.out.println(hello.sayHello());
 		
-		// printer Bean °¡Á®¿À±â
+		// printer Bean ê°€ì ¸ì˜¤ê¸°
 		Printer printer = ac.getBean("printer", Printer.class);
 		System.out.println(printer.toString());
 	}

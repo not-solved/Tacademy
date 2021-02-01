@@ -13,7 +13,7 @@ import myspring.di.xml.Printer;
 
 import java.util.List;
 
-// SpringÀÇ ¹æ½ÄÀ¸·Î Å×½ºÆ®
+// Springì˜ ë°©ì‹ìœ¼ë¡œ í…ŒìŠ¤íŠ¸
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:config/beans.xml")
 public class HelloBeanSpringTest {

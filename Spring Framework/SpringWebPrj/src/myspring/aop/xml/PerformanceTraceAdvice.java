@@ -6,24 +6,24 @@ public class PerformanceTraceAdvice {
 	
 	public Object trace(ProceedingJoinPoint joinPoint) throws Throwable {
 		
-		// Å¸°Ù ¸Ş¼­µåÀÇ signature Á¤º¸
+		// íƒ€ê²Ÿ ë©”ì„œë“œì˜ signature ì •ë³´
 		String signatureString = joinPoint.getSignature().toShortString();
-		System.out.println(signatureString + " ½ÃÀÛ");
+		System.out.println(signatureString + " ì‹œì‘");
 		
-		// È£ÃâµÇ±â Àü ½Ã°£ (½ÃÀÛ ½Ã°£)
+		// í˜¸ì¶œë˜ê¸° ì „ ì‹œê°„ (ì‹œì‘ ì‹œê°„)
 		long start = System.currentTimeMillis();
 		try {
-			// È£Ãâ
+			// í˜¸ì¶œ
 			Object result = joinPoint.proceed();
 			return result;
 		}
 		finally {
 			
-			// È£Ãâ ÈÄ ¹İ³³ÇÑ ½Ã°£ (Á¾·á ½Ã°£)
+			// í˜¸ì¶œ í›„ ë°˜ë‚©í•œ ì‹œê°„ (ì¢…ë£Œ ì‹œê°„)
 			long finish = System.currentTimeMillis();
 			
-			System.out.println(signatureString + " Á¾·á");
-			System.out.println(signatureString + " ½ÇÇà½Ã°£ : " + (finish - start) + " ms" );
+			System.out.println(signatureString + " ì¢…ë£Œ");
+			System.out.println(signatureString + " ì‹¤í–‰ì‹œê°„ : " + (finish - start) + " ms" );
 		}
 	}
 }

@@ -15,16 +15,16 @@ public class LoggingAspect {
 	@Before("execution(public * myspring..*(..))")
 	public void before(JoinPoint jp) {
 		String signatureString = jp.getSignature().getName();	
-		System.out.println("@Before [ " + signatureString + " ] ¸Ş¼­µå ½ÇÇà ÀüÃ³¸® ¼öÇà");		
+		System.out.println("@Before [ " + signatureString + " ] ë©”ì„œë“œ ì‹¤í–‰ ì „ì²˜ë¦¬ ìˆ˜í–‰");		
 		for (Object arg : jp.getArgs()) {
-			System.out.println("@Before [ " + signatureString + " ] ¾Æ±Ô¸ÕÆ® " + arg);			
+			System.out.println("@Before [ " + signatureString + " ] ì•„ê·œë¨¼íŠ¸ " + arg);			
 		}		
 	}
     @AfterReturning(pointcut="execution(public * myspring.user.service.*.*(..))", returning="ret")
 	public void afterReturning(JoinPoint jp, Object ret) {
 		String signatureString = jp.getSignature().getName();		
-		System.out.println("@AfterReturing [ " + signatureString + " ] ¸Ş¼­µå ½ÇÇà ÈÄÃ³¸® ¼öÇà");
-		System.out.println("@AfterReturing [ " + signatureString + " ] ¸®ÅÏ°ª=" + ret);
+		System.out.println("@AfterReturing [ " + signatureString + " ] ë©”ì„œë“œ ì‹¤í–‰ í›„ì²˜ë¦¬ ìˆ˜í–‰");
+		System.out.println("@AfterReturing [ " + signatureString + " ] ë¦¬í„´ê°’=" + ret);
 
 	}
     
@@ -32,13 +32,13 @@ public class LoggingAspect {
     		throwing="ex")
 	public void afterThrowing(JoinPoint jp, Throwable ex) {
 		String signatureString = jp.getSignature().getName();	
-		System.out.println("@AfterThrowing [ " + signatureString + " ] ¸Ş¼­µå ½ÇÇà Áß ¿¹¿Ü ¹ß»ı");
-		System.out.println("@AfterThrowing [ " + signatureString + " ] ¿¹¿Ü=" + ex.getMessage());
+		System.out.println("@AfterThrowing [ " + signatureString + " ] ë©”ì„œë“œ ì‹¤í–‰ ì¤‘ ì˜ˆì™¸ ë°œìƒ");
+		System.out.println("@AfterThrowing [ " + signatureString + " ] ì˜ˆì™¸=" + ex.getMessage());
 	}
     
     @After("execution(* *..*.*User(..))")
 	public void afterFinally(JoinPoint jp) {
 		String signatureString = jp.getSignature().getName();
-		System.out.println("@After [ " + signatureString + " ] ¸Ş¼­µå ½ÇÇà ¿Ï·á");
+		System.out.println("@After [ " + signatureString + " ] ë©”ì„œë“œ ì‹¤í–‰ ì™„ë£Œ");
 	}
 }

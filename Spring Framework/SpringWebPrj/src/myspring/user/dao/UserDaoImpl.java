@@ -30,20 +30,20 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public void insert(UserVO user) {
 		session.update("userNS.insertUser", user);
-		System.out.println("Ãß°¡µÈ »ç¿ëÀÚ : " + user);
+		System.out.println("ì¶”ê°€ëœ ì‚¬ìš©ì : " + user);
 	}
 
 	@Override
 	public void update(UserVO user) {
 		session.update("userNS.updateUser", user);
-		System.out.println("¼öÁ¤µÈ »ç¿ëÀÚ : " + user);
+		System.out.println("ìˆ˜ì •ëœ ì‚¬ìš©ì : " + user);
 
 	}
 
 	@Override
 	public void delete(String id) {
 		session.delete("userNS.deleteUser", id);
-		System.out.println(id + "¹ø »ç¿ëÀÚ »èÁ¦");
+		System.out.println(id + "ë²ˆ ì‚¬ìš©ì ì‚­ì œ");
 
 	}
 

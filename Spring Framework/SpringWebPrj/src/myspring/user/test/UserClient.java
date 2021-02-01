@@ -28,14 +28,14 @@ public class UserClient {
 	@Test
 	@Ignore
 	public void updateUserTest() {
-		service.updateUser(new UserVO("gildong", "È«±æµ¿", "³²", "¼­¿ï"));
+		service.updateUser(new UserVO("gildong", "í™ê¸¸ë™", "ë‚¨", "ì„œìš¸"));
 		
 	}
 
 	@Test
 	@Ignore
 	public void insertUserTest() {
-		service.insertUser(new UserVO("dooly", "µÑ¸®", "³²", "°æ±â"));
+		service.insertUser(new UserVO("dooly", "ë‘˜ë¦¬", "ë‚¨", "ê²½ê¸°"));
 		for(UserVO user : service.getUserList()) {
 			System.out.println(user);
 		}
@@ -45,7 +45,7 @@ public class UserClient {
 	public void getUserTest() {
 		UserVO user = service.getUser("gildong");
 		System.out.println(user);
-		assertEquals("È«±æµ¿", user.getName());
+		assertEquals("í™ê¸¸ë™", user.getName());
 	}
 
 	@Test

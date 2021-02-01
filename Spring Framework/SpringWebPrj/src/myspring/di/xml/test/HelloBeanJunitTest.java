@@ -7,7 +7,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 import myspring.di.xml.Hello;
 import myspring.di.xml.Printer;
 
-// JUnitÀ¸·Î Å×½ºÆ®
+// JUnitìœ¼ë¡œ í…ŒìŠ¤íŠ¸
 public class HelloBeanJunitTest {
 
 	ApplicationContext ac;
@@ -15,7 +15,7 @@ public class HelloBeanJunitTest {
 	@Before
 	public void init() {
 		
-		// IoC ÄÁÅ×ÀÌ³Ê »ı¼º
+		// IoC ì»¨í…Œì´ë„ˆ ìƒì„±
 		ac = new GenericXmlApplicationContext("classpath:config/beans.xml");
 	}
 	
