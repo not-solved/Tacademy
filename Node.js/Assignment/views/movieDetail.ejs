@@ -1,0 +1,29 @@
+<html>
+<head>
+   <meta charset="UTF-8" />
+    <title>NodeJS Movie Detail</title>
+</head>
+<body>
+    <h1>영화 상세 정보</h1>
+    
+    <ul>
+        <li>제목 : <%= movieDetail.title %></li>
+        <li>감독 : <%= movieDetail.director %></li>
+        <li>연도 : <%= movieDetail.year %></li>
+    </ul>
+
+    <h3>리뷰 ( <%= movieDetail.reviews.length %> )</h3>
+    <ul>
+        <% movieDetail.reviews.forEach((review) => { %>
+        <li>
+            <%= review %>
+        </li>
+        <% }); %>
+    </ul>
+    <form method="post" action="/movies/<%= movieDetail.movieId %>" >
+        <input type="text" name="review" />
+        <input type="submit" value="입력" />
+    </form>
+
+</body>
+</html>
