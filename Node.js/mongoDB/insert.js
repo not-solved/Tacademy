@@ -1,12 +1,14 @@
 var MongoClient = require('mongodb').MongoClient
 var url = "mongodb://localhost:27017/tacademy";
+var db;
 
-MongoClient.connect(url, (err, db) => {
+MongoClient.connect(url, (err, database) => {
     if(err) {           // DB 연결 실패
         console.error('MongoDB connection failed : ', err);
         return;
     }
 
+    db = database.db('tacademy');
     var movies = db.collection('movies');
 
     //  document 하나 추가

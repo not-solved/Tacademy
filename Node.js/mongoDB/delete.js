@@ -8,7 +8,7 @@ MongoClient.connect(url, (err, database) => {
         return;
     }
 
-    db = database;
+    db = database.db('tacademy');
 
     var movies = db.collection('movies');
 

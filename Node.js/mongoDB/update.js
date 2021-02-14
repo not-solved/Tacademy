@@ -8,7 +8,7 @@ MongoClient.connect(url, (err, database) => {
         return;
     }
 
-    db = database;
+    db = database.db('tacademy');
 
     var promise = db.collection('movies').insertMany([
         { title: '스타워즈', director: '조지 루카스', year: 1977 },

@@ -9,7 +9,7 @@ MongoClient.connect(url, (err, database) => {
         return;
     }
 
-    db = database;
+    db = database.db('tacademy');
 
     //  document 여러개 추가
     var promise = db.collection('movies').insertMany([
