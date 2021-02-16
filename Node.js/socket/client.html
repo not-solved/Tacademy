@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF8">
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.on('connect', () => {
+                console.log('Server connected');
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Socket.IO Sample</h1>
+        <ul>
+            <script>
+                socket.on('message', (msg) => {
+                    document.writeln('<li>');
+                    document.writeln(msg);
+                    document.writeln('</li>');
+                });
+            </script>
+        </ul>
+    </body>
+</html>
